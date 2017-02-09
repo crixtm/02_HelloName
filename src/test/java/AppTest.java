@@ -8,6 +8,19 @@ import java.io.ByteArrayInputStream;
 import static org.testng.Assert.*;
 
 public class AppTest {
+
+    //---------------------------------------------------
+    @Test public void tmpTest(){
+        //given
+        App classUnderTest = new App();
+        String nothing = ""+System.lineSeparator();
+        System.setIn(new ByteArrayInputStream(nothing.getBytes()));
+        //when
+        String res = classUnderTest.tmp();
+        //then
+        assertEquals(res, "");
+    }
+
     @Test public void appHasAGreeting() {
         App classUnderTest = new App();
         System.setIn(new ByteArrayInputStream("asdf".getBytes()));
